@@ -12,6 +12,8 @@ module.exports = {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        cursive: ['Permanent Marker', 'cursive'],
+        ephesis: ['Ephesis', 'cursive'],
       },
     },
     screens: {

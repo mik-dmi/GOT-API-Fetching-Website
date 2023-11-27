@@ -37,9 +37,12 @@ const ModalPopUp = ({handleClose, familyClicked }) => {
 
         >
             {familyClicked.members.map((member, index) => (
-                <span key={Math.random()}>{member.name}</span>
+                <span className={`font-ephesis text-[2rem] font-[500]`} key={member.slug}>
+                    {member.name}
+                </span>
             ))}
-            <button onClick={handleClose}> Close </button>
+            <button className='mt-[2rem] font-poppins font-[600] text-red-600 py-[0.2rem] px-[2rem]
+            rounded-[1rem] hover:bg-slate-300' onClick={handleClose}> Close </button>
 
 
         </motion.div>
