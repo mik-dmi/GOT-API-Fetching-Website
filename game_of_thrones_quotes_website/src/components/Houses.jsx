@@ -3,41 +3,46 @@ import styles, { layout } from "../style";
 import Button from "./Button";
 import { useState } from 'react';
 import SearchBar from './SearchBar';
+import SearchList from './SearchList';
+import { dragon_one } from '../assets';
 
 
 
 
 const Houses = () =>{
 
-  const [house, setHouse] = useState([])
+  
+  const [housesResults ,setHousesResults] = useState([])
 
-  useEffect(()=>{
+
+  const fetchData = (value) => {
     fetch("https://api.gameofthronesquotes.xyz/v1/houses")
     .then((res) => res.json())
-    .then((data)=>{ setHouse(data)})
+    .then((data)=>{
+      const results = data.filter((user) =>{
+      return value && user && user.name && user.name.toLowerCase().includes(value)
+      });
+      setHousesResults(results)
+    })
     .catch(err => console.log(err))
-  },[])
+  }
+ 
   
 
   
   return(
 
     <section id="house" className={` ${layout.section} items-center`}>
-    <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
-        First time diving   
-      </h2> 
-      {/*<ul className={` max-w-[800px] text-[black]`}>
-          {house.map((list, index)=>(
-            <li key={index}>{list?.name}</li>
-          ) )}
-          </ul>*/}
-      <SearchBar />
-      <Button />
-    </div>
-    <div className={layout.sectionImg}>
-      {/*<img src={FirstTime} alt="Diving Courses" className="max-w-[90%] max-h-[90%]  shadow-lg " />*/}
-    </div>
+      <div className={`${layout.sectionInfo} gap-[1rem] self-baseline`}>
+        <h3 className={`${styles.heading3}  `}>
+          Game of Thrones Houses   
+        </h3> 
+        <SearchBar fetchFunction = {fetchData} updatedList = {housesResults}/>
+        <Button />
+      </div>
+      <div className={layout.sectionImg}>
+        <img src={dragon_one} alt="Dragon" className="max-w-[80%] max-h-[80%]  shadow-lg rounded-[0.3rem] " />
+      </div>
 
 
 

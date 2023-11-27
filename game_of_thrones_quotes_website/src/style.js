@@ -4,6 +4,8 @@ const styles = {
     heading2: "font-poppins font-semibold sm:text-[4rem] text-[2.5rem] xs:text-[2.5rem] text-[1rem]  text-white xs:leading-[76.8px] leading-[66.8px]",
     paragraph: "font-poppins font-[500] text-white sm:text-[1.5rem] text-1   xs:text-[1rem]  leading-[30.8px] whitespace-normal",
   
+    heading3: "font-poppins font-semibold sm:text-[3rem] text-[2rem] xs:text-[2rem] text-[0.8rem]  text-gray-700 xs:leading-[70.8px] leading-[60.8px]",
+
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
   
@@ -20,7 +22,7 @@ const styles = {
     sectionReverse: `flex md:flex-row flex-col-reverse ${styles.paddingY}`,
   
     sectionImgReverse: `flex-1 flex ${styles.flexCenter} md:mr-10 mr-0 md:mt-0 mt-10 relative`,
-    sectionImg: `flex-1 flex ${styles.flexCenter} md:ml-10 ml-0 md:mt-0 mt-10 relative`,
+    sectionImg: `flex-1 flex ${styles.flexCenter} md:ml-10 ml-0 md:mt-0 mt-10 `,
   
     sectionInfo: `flex-1 ${styles.flexStart} flex-col`,
   };
