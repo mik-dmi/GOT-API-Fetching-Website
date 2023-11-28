@@ -4,15 +4,16 @@ import { useState } from 'react';
 import SearchList from './SearchList';
 
 
-const SearchBar = ({fetchFunction, updatedList}) => {
+const SearchBar = ({fetchFunction, updatedList, ModalType}) => {
     const [input, setInput] = useState([]);
     
 
-
+    console.log(`list ___> ${updatedList}` )
 
     const handChange = (value) => {
         setInput(value);
         fetchFunction(value);
+        
 
     }
     
@@ -25,7 +26,7 @@ const SearchBar = ({fetchFunction, updatedList}) => {
                 onChange={e => handChange(e.target.value)}     
                 />            
             </div>
-            <SearchList  listResults={updatedList} /> 
+            <SearchList  listResults={updatedList}   TypeOfModal={ModalType} /> 
 
         </div>
   )

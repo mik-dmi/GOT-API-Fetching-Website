@@ -3,24 +3,33 @@ import styles, { layout } from "../style";
 import { useState } from 'react';
 import SearchBar from './SearchBar';
 import { jonSnow } from '../assets';
+import ModalPopUpPersons from './ModalPopUpPersons';
 
 
 const Persons = () => {
  
     const [housesResults ,setHousesResults] = useState([])
 
-
     const fetchData = (value) => {
-      fetch("https://api.gameofthronesquotes.xyz/v1/houses")
+      fetch("https://api.gameofthronesquotes.xyz/v1/characters")
       .then((res) => res.json())
       .then((data)=>{
-        const results = data.filter((user) =>{
-        return value && user && user.name && user.name.toLowerCase().includes(value)
+        const nameList = data.map((character, index) => {
+          const characterName = character && character.name;
+          const houseName = character && character.house && character.house.name;
+          const characterQuotes = character && character.quotes
+          return [`${characterName || 'Unknown Character'} (${houseName || 'No house'})`, `${characterQuotes || 'No quotes'}`];
         });
+        const results = nameList.filter((user) =>{
+        return value && user[0] && user[0] && user[0].toLowerCase().includes(value)
+        });
+ 
         setHousesResults(results)
       })
       .catch(err => console.log(err))
     }
+   
+
       
     return(
   
@@ -30,15 +39,11 @@ const Persons = () => {
         </div>
         <div className={`${layout.sectionInfo} gap-[1rem] self-baseline`}>
           <h3 className={`${styles.heading3}  `}>
-            Game of Thrones Houses   
+            Game of Thrones Persons   
           </h3> 
-          <SearchBar fetchFunction = {fetchData} updatedList = {housesResults}/>
+          <SearchBar fetchFunction = {fetchData} updatedList = {housesResults} ModalType={ModalPopUpPersons}  />
        
         </div>
-
-  
-  
-  
     </section>
   )
 }

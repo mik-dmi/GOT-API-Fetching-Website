@@ -5,6 +5,7 @@ import { useState } from 'react';
 import SearchBar from './SearchBar';
 
 import { dragon_one } from '../assets';
+import ModalPopUpHouses from './ModalPopUpHouses';
 
 
 
@@ -13,21 +14,31 @@ const Houses = () =>{
 
   
   const [housesResults ,setHousesResults] = useState([])
+  
 
 
   const fetchData = (value) => {
     fetch("https://api.gameofthronesquotes.xyz/v1/houses")
     .then((res) => res.json())
     .then((data)=>{
-      const results = data.filter((user) =>{
-      return value && user && user.name && user.name.toLowerCase().includes(value)
+      
+      
+      const characterNames =  data.map((character, index) => {
+        return [character.name , character.members]
+      })
+      console.log(characterNames)
+      const results = characterNames.filter((user) =>{
+      return value && user[0] && user[0] && user[0].toLowerCase().includes(value)
       });
+
       setHousesResults(results)
+     
     })
     .catch(err => console.log(err))
+
   }
- 
-  
+  console.log("houuuuses")
+  console.log(housesResults)
 
   
   return(
@@ -35,9 +46,9 @@ const Houses = () =>{
     <section id="house" className={` ${layout.section} items-center`}>
       <div className={`${layout.sectionInfo} gap-[1rem] self-baseline`}>
         <h3 className={`${styles.heading3}  `}>
-          Game of Thrones Persons   
+          Game of Thrones Houses   
         </h3> 
-        <SearchBar fetchFunction = {fetchData} updatedList = {housesResults}/>
+        <SearchBar fetchFunction = {fetchData} updatedList = {housesResults}  ModalType={ModalPopUpHouses}  />
         
       </div>
       <div className={layout.sectionImg}>

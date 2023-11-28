@@ -2,7 +2,7 @@ import React from 'react'
 import {motion} from "framer-motion"
 import ModalBackDrop from './ModalBackDrop'
 
-const ModalPopUp = ({handleClose, familyClicked }) => {
+const ModalPopUpHouses = ({handleClose, familyClicked }) => {
   
     const dropIn = {
         hidden:{
@@ -23,7 +23,7 @@ const ModalPopUp = ({handleClose, familyClicked }) => {
             opacity: 0,
         }
     }
-    console.log(familyClicked)
+    console.log(`${familyClicked}` )
   
    return (
     <ModalBackDrop onClick = {handleClose}>
@@ -36,7 +36,7 @@ const ModalPopUp = ({handleClose, familyClicked }) => {
             exit="exit"
 
         >
-            {familyClicked.members.map((member, index) => (
+            {familyClicked[1].map((member, index) => (
                 <span className={`font-ephesis text-[2rem] font-[500]`} key={member.slug}>
                     {member.name}
                 </span>
@@ -53,4 +53,4 @@ const ModalPopUp = ({handleClose, familyClicked }) => {
   )
 }
 
-export default ModalPopUp
+export default ModalPopUpHouses
