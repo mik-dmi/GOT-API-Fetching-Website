@@ -44,7 +44,7 @@ const Houses = () =>{
   return(
 
     <section id="house" className={` ${layout.section} items-center`}>
-      <div className={`${layout.sectionInfo} gap-[1rem] self-baseline`}>
+      <div className={`flex-1  flex justify-start items-start flex-col pt-[1.5rem] gap-[1rem] self-baseline min-h-[400px] `}>
         <h3 className={`${styles.heading3}  `}>
           Game of Thrones Houses   
         </h3> 

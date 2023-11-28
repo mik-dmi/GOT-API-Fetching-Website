@@ -11,10 +11,9 @@ const SearchBar = ({fetchFunction, updatedList, ModalType}) => {
     console.log(`list ___> ${updatedList}` )
 
     const handChange = (value) => {
+        const lowercasedValue = value.toLowerCase();
         setInput(value);
-        fetchFunction(value);
-        
-
+        fetchFunction(lowercasedValue);
     }
     
     return (
