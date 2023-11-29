@@ -28,7 +28,7 @@ const App = () => {
             <div className={`${styles.paddingHero}    bg-blue-100 flex flex-col   pl-[2em] pr-[2em] `}>  
               <Persons />
             </div>
-            <div className={`${styles.paddingHero} flex flex-col   pl-[2em] pr-[2em] `}>
+            <div className={`${styles.paddingHero} flex flex-col   pl-[2em] pr-[2em] w-[100%]`}>
               <Quotes />
             </div>
         </div>

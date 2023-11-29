@@ -1,8 +1,18 @@
 import React from 'react'
 
-const Button = () => {
+const Button = ({runFunction, textButton ,styleButton}) => {
   return (
-    <div>Button</div>
+    <button 
+    className={`${styleButton} text-white font-semibold text-[1.5rem]`}
+    onClick={(e) =>{ 
+
+      runFunction()
+      
+      
+      }} >
+      {textButton}
+
+    </button>
   )
 }
 

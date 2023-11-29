@@ -10,7 +10,10 @@ const SearchList = ({ listResults , TypeOfModal}) => {
 
     
 
-    const close = () => setPopUp(false);
+    const close = () => {
+      console.log('Closing modal');
+      setPopUp(false);
+    };
     const open = (line) => {
       setPopUp((prevPopUp) => {
         if (!prevPopUp) {
@@ -27,10 +30,9 @@ const SearchList = ({ listResults , TypeOfModal}) => {
           shadow-black mt-[0.5rem]  border-transparent rounded-[0.3rem]
           ${listResults.length === 0 ? 'hidden' : ''} ${listResults.length > '5' ? 'max-h-[10rem] overflow-y-scroll' : ''}`}>
 {/*HouseNameAndMembers has the houseName in position [0]  and list of members in position [1]  */}       
-        {
-        listResults.map((HouseNameAndMembers, index) => (  
+        {listResults.map((HouseNameAndMembers, index) => (  
           <div
-            key={Math.random()}
+            key={crypto.randomUUID()}
             className={`px-[1rem] py-[0.5rem] rounded-[0.3rem]
               font-poppins cursor-pointer ${popUp ? '' :'hover:bg-gray-300' }`}
             onClick={() => {
@@ -38,7 +40,7 @@ const SearchList = ({ listResults , TypeOfModal}) => {
             }}
           > 
             {HouseNameAndMembers[0]}
-            {familyClicked && popUp && <TypeOfModal handleClose={close} familyClicked={familyClicked} />}
+            {familyClicked[0] === HouseNameAndMembers[0] && popUp && <TypeOfModal handleClose={close} familyClicked={familyClicked} />}
           </div>
         ))}
       </div>

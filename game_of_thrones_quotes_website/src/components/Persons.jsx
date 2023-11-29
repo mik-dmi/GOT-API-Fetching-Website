@@ -8,7 +8,7 @@ import ModalPopUpPersons from './ModalPopUpPersons';
 
 const Persons = () => {
  
-    const [housesResults ,setHousesResults] = useState([])
+    const [personResults ,setPersonResults] = useState([])
 
     const fetchData = (value) => {
       fetch("https://api.gameofthronesquotes.xyz/v1/characters")
@@ -18,13 +18,15 @@ const Persons = () => {
           const characterName = character && character.name;
           const houseName = character && character.house && character.house.name;
           const characterQuotes = character && character.quotes
-          return [`${characterName || 'Unknown Character'} (${houseName || 'No house'})`, `${characterQuotes || 'No quotes'}`];
+          const slugCharacter = character && character.slug
+      
+          return [`${characterName || 'Unknown Character'} (${houseName || 'No house'})`, `${characterQuotes || 'No quotes'}`, `${slugCharacter || 'No slug'}`];
         });
         const results = nameList.filter((user) =>{
         return value && user[0] && user[0] && user[0].toLowerCase().includes(value)
         });
  
-        setHousesResults(results)
+        setPersonResults(results)
       })
       .catch(err => console.log(err))
     }
@@ -33,7 +35,7 @@ const Persons = () => {
       
     return(
   
-      <section id="house" className={` ${layout.section} items-center`}>
+      <section id="house" className={` ${layout.section} ${styles.paddingX} items-center`}>
         <div className={layout.sectionImg}>
           <img src={jonSnow} alt="Jon Snow " className="max-w-[80%] max-h-[80%]  shadow-lg rounded-[0.3rem] " />
         </div>
@@ -41,7 +43,7 @@ const Persons = () => {
           <h3 className={`${styles.heading3}  `}>
             Game of Thrones Persons   
           </h3> 
-          <SearchBar fetchFunction = {fetchData} updatedList = {housesResults} ModalType={ModalPopUpPersons}  />
+          <SearchBar fetchFunction = {fetchData} updatedList = {personResults} ModalType={ModalPopUpPersons}  />
        
         </div>
     </section>
@@ -50,16 +52,5 @@ const Persons = () => {
 
 export default Persons
 
-
-
-
-
-
-
-
-
-  
-
-  
 
 

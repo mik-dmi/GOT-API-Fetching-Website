@@ -34,10 +34,11 @@ const ModalPopUpHouses = ({handleClose, familyClicked }) => {
             initial = "hidden"
             animate = "visible"
             exit="exit"
+            key={crypto.randomUUID()}
 
         >
             {familyClicked[1].map((member, index) => (
-                <span className={`font-ephesis text-[2rem] font-[500]`} key={member.slug}>
+                <span className={`font-ephesis text-[2rem] font-[500]`} key={crypto.randomUUID()}>
                     {member.name}
                 </span>
             ))}
