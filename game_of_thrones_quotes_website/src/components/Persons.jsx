@@ -19,11 +19,11 @@ const Persons = () => {
           const houseName = character && character.house && character.house.name;
           const characterQuotes = character && character.quotes
           const slugCharacter = character && character.slug
-      
+          
           return [`${characterName || 'Unknown Character'} (${houseName || 'No house'})`, `${characterQuotes || 'No quotes'}`, `${slugCharacter || 'No slug'}`];
         });
         const results = nameList.filter((user) =>{
-        return value && user[0] && user[0] && user[0].toLowerCase().includes(value)
+        return value && user[0] && user[0] && user[0].toLowerCase().includes(value) 
         });
  
         setPersonResults(results)

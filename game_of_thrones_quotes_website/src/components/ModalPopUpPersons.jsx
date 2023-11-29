@@ -76,7 +76,7 @@ const ModalPopUpPersons = ({handleClose, familyClicked}) => {
                     </span>
                     </React.Fragment>
                     )
-                )}
+                ).slice(0, 5)}
             </div>
                 
                 <div className="flex flex-col">
