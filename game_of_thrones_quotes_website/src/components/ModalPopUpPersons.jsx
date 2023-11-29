@@ -70,7 +70,7 @@ const ModalPopUpPersons = ({handleClose, familyClicked}) => {
             <div className="flex flex-col">
                 {sentencesArray.map((sentence, index) => (
                     <React.Fragment key={sentence.substring(0, 5)}>
-                    <span className="font-ephesis md:text-[3rem] sm:text-[2rem] text-[1.5rem] ">
+                    <span className="font-ephesis md:text-[3rem] sm:text-[2rem] text-[1.5rem] mb-[2rem]  md:leading-[3.5rem] sm:leading-[2rem] leading-[1.5rem] ">
                     {index === sentencesArray.length -1 ? `" ${sentence.trim()}"` : `"${sentence.trim()}."`}
                         
                     </span>
