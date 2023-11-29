@@ -55,7 +55,7 @@ const ModalPopUpPersons = ({handleClose, familyClicked}) => {
         <ModalBackDrop>
          <motion.div
             onClick={(e) => e.stopPropagation()}
-            className = 'w-full  bg-dimWhite md:w-1/2 lg:w-1/2 xl:w-[90%] m-auto p-[1rem] rounded-[1rem] flex flex-col items-center'
+            className = ' w-fit bg-dimWhite  max-w-[90%] m-auto p-[1rem] max-h-[80%] rounded-[1rem] flex flex-col items-center overflow-y-scroll'
             key={crypto.randomUUID()}
             variants = {dropIn}
             initial = "hidden"
@@ -64,23 +64,24 @@ const ModalPopUpPersons = ({handleClose, familyClicked}) => {
 
         >
 
-            <span className={`font-ephesis text-[2rem] font-[500] pb-[0.5rem]`} >
+            <span className={`font-poppins md:text-[3rem] sm:text-[2rem] text-[1.5rem] font-[500] pb-[0.5rem]`} >
                 {familyClicked[0]}
             </span>  
             <div className="flex flex-col">
                 {sentencesArray.map((sentence, index) => (
                     <React.Fragment key={sentence.substring(0, 5)}>
-                    <span className="your-span-class">
-                        {sentence.trim()} {/* Trim to remove leading/trailing spaces */}
+                    <span className="font-ephesis md:text-[3rem] sm:text-[2rem] text-[1.5rem] ">
+                    {index === sentencesArray.length -1 ? `" ${sentence.trim()}"` : `"${sentence.trim()}."`}
+                        
                     </span>
                     </React.Fragment>
                     )
                 )}
             </div>
                 
-                <div>
-                    <Button runFunction={fetchData} textButton={'More Quotes'} styleButton={'px-[2rem] py-[0.5rem] bg-cyan-300'} />
-                    <button className='mt-[2rem] font-poppins font-[600] text-red-600 py-[0.2rem] px-[2rem]
+                <div className="flex flex-col">
+                    <Button runFunction={fetchData} textButton={'More Quotes'} styleButton={' mt-[0.5rem] px-[2rem] hover:bg-cyan-500 py-[0.5rem] bg-cyan-300'} />
+                    <button className='mt-[0.5rem] font-poppins font-[600] text-red-600 py-[0.2rem] px-[2rem]
                     rounded-[1rem] hover:bg-slate-300' onClick={handleClose}> Close </button>
                 </div>
 

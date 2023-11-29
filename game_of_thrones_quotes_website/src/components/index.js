@@ -9,6 +9,8 @@ import SearchList from "./SearchList"
 import ModalPopUpHouses from "./ModalPopUpHouses";
 import ModalBackDrop from "./ModalBackDrop";
 import ModalPopUpPersons from "./ModalPopUpPersons"
+import ModalPopUpQuotes from "./ModalPopUpQuotes"
+import Footer from "./Footer"
 export{
     Hero,
     Houses,
@@ -21,4 +23,6 @@ export{
     ModalPopUpHouses,
     ModalPopUpPersons,
     ModalBackDrop,
+    ModalPopUpQuotes,
+    Footer,
 };

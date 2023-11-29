@@ -31,7 +31,7 @@ const Houses = () =>{
       return value && user[0] && user[0] && user[0].toLowerCase().includes(value)
       });
 
-      setHousesResults(results)  /*[name , members]
+      setHousesResults(results)  /*[name , members]*/
      
     })
     .catch(err => console.log(err))

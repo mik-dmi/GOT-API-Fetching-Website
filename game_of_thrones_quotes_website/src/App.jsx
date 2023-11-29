@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './style'
-import { Navbar, Hero, Houses, Persons, Quotes } from './components'
+import { Navbar, Hero, Houses, Persons, Quotes, Footer } from './components'
 
 
 const App = () => {
@@ -22,14 +22,17 @@ const App = () => {
         
         <div className={`bg-white  sm:px-16 px-0 ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth} flex flex-col items-center `}>
-            <div className={`${styles.paddingHero} flex flex-col   pl-[2em] pr-[2em] `}>
+            <div className={` flex flex-col   pl-[2em] pr-[2em] `}>
               <Houses /> 
             </div>
-            <div className={`${styles.paddingHero}    bg-blue-100 flex flex-col   pl-[2em] pr-[2em] `}>  
+            <div className={`    bg-blue-100 flex flex-col   pl-[2em] pr-[2em] `}>  
               <Persons />
             </div>
-            <div className={`${styles.paddingHero} flex flex-col   pl-[2em] pr-[2em] w-[100%]`}>
+            <div className={` flex flex-col   pl-[2em] pr-[2em] w-[100%]`}>
               <Quotes />
+            </div>
+            <div className={` bg-[#3F3E45] flex flex-col   pl-[2em] pr-[2em] w-[100%]`}>
+              <Footer />
             </div>
         </div>
       </div>

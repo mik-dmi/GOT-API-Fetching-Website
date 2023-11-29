@@ -2,7 +2,7 @@ import React from 'react'
 import {motion} from "framer-motion"
 import ModalBackDrop from './ModalBackDrop'
 
-const ModalPopUpHouses = ({handleClose, familyClicked }) => {
+const ModalPopUpQuotes = ({handleClose, familyClicked }) => {
   
     const dropIn = {
         hidden:{
@@ -37,11 +37,10 @@ const ModalPopUpHouses = ({handleClose, familyClicked }) => {
             key={crypto.randomUUID()}
 
         >
-            {familyClicked[1].map((member, index) => (
-                <span className={`font-poppins  xs:text-[2rem] text-[1.5rem] font-[500] text-center`} key={crypto.randomUUID()}>
-                    {member.name}
-                </span>
-            ))}
+            <span className={`font-poppins  xs:text-[3rem] text-[1.5rem] font-[500]`}>
+                    {`${familyClicked[1]} (${familyClicked[2]})`}
+            </span >
+            <span className={`font-ephesis  xs:text-[3rem] text-[1.5rem] font-[500]`}> {`"${familyClicked[0]}"`}</span>
             <button className='mt-[1rem] font-poppins font-[600] text-red-600 py-[0.2rem] px-[2rem]
             rounded-[1rem] hover:bg-slate-300' onClick={handleClose}> Close </button>
 
@@ -54,4 +53,4 @@ const ModalPopUpHouses = ({handleClose, familyClicked }) => {
   )
 }
 
-export default ModalPopUpHouses
+export default ModalPopUpQuotes

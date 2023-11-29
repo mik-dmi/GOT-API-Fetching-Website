@@ -35,7 +35,7 @@ const Persons = () => {
       
     return(
   
-      <section id="house" className={` ${layout.section} ${styles.paddingX} items-center`}>
+      <section id="person" className={` ${layout.section} ${styles.paddingX} items-center`}>
         <div className={layout.sectionImg}>
           <img src={jonSnow} alt="Jon Snow " className="max-w-[80%] max-h-[80%]  shadow-lg rounded-[0.3rem] " />
         </div>
