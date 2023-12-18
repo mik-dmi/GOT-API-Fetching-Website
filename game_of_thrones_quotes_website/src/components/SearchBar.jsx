@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SearchList from './SearchList';
 
 
-const SearchBar = ({fetchFunction, updatedList, ModalType}) => {
+const SearchBar = ({fetchFunction, updatedList, ModalType, placeHolder}) => {
     const [input, setInput] = useState([]);
     
 
@@ -20,7 +20,7 @@ const SearchBar = ({fetchFunction, updatedList, ModalType}) => {
         <div>
             <div className='flex bg-slate-300 w-[100%] rounded-[0.6rem] items-center px-[1rem] py-[0.3rem] gap-[0.5rem]'>
                 <FaSearch id= "search-icon" className='text-[1.5rem] p-[0.1rem] text-cyan-900' />
-                <input placeholder='Search..'  className='bg-transparent outline-none text-[1.5rem]'
+                <input placeholder={placeHolder} className='bg-transparent outline-none text-[1.5rem]'
                 value = {input}
                 onChange={e => handChange(e.target.value)}     
                 />            

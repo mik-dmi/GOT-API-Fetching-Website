@@ -5,6 +5,7 @@ const styles = {
     paragraph: "font-poppins sm:py-[1rem] py-0 font-[500] text-white sm:text-[1.5rem] text-1   xs:text-[1rem]  leading-[1.5rem] whitespace-normal",
   
     heading3: "font-poppins font-semibold sm:text-[3rem] text-[2rem] xs:text-[2rem] text-[0.8rem]  text-gray-700 xs:leading-[3rem] leading-[60.8px]",
+    heading4: "font-poppins font-medium sm:text-[1rem] text-[0.8rem] xs:text-[1rem] text-[0.5rem]  text-gray-600 xs:leading-[3rem] leading-[60.8px]",
 
     flexCenter: "flex justify-center items-center",  
     flexStart: "flex justify-center items-start",

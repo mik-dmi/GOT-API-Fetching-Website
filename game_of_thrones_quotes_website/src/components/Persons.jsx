@@ -35,18 +35,20 @@ const Persons = () => {
       
     return(
   
-      <section id="person" className={` ${layout.sectionReverse} ${styles.paddingX} items-center`}>
+      <section id="person" className={` ${styles.boxWidth} ${layout.sectionReverse} ${styles.paddingX} items-center`}>
         <div className={layout.sectionImg}>
           <img src={jonSnow} alt="Jon Snow " className="max-w-[80%] max-h-[80%]  shadow-lg rounded-[0.3rem] " />
         </div>
-        <div className={`flex-1  flex justify-start items-start flex-col pt-[1.5rem] gap-[1rem] sm:self-baseline sm:min-h-[400px] min-h-[300px]`}>
-          <h3 className={`${styles.heading3}  `}>
-            Game of Thrones Persons   
+        <div className={`flex-1  flex justify-start items-start flex-col pt-[1.5rem] gap-[1rem]  sm:self-baseline self-center sm:min-h-[400px] min-h-[300px] `}>
+          <h3 className={`${styles.heading3}  flex flex-col `}>
+          Learn a Characters Quotes 
+            <span className={`${styles.heading4}  italic`}>Click to view characters quotes</span> 
           </h3> 
-          <SearchBar fetchFunction = {fetchData} updatedList = {personResults} ModalType={ModalPopUpPersons}  />
-       
+
+          <SearchBar fetchFunction = {fetchData} updatedList = {personResults} ModalType={ModalPopUpPersons} placeHolder={"Search for a Characters name"} />
+        
         </div>
-    </section>
+     </section>
   )
 }
 

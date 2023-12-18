@@ -43,12 +43,14 @@ const Houses = () =>{
   
   return(
 
-    <section id="house" className={` ${layout.section} ${styles.paddingX} items-center`}>
-      <div className={`flex-1  flex justify-start items-start flex-col pt-[1.5rem] gap-[1rem] sm:self-baseline sm:min-h-[400px] min-h-[300px] `}>
-        <h3 className={`${styles.heading3}  `}>
-          Game of Thrones Houses   
+    <section id="house" className={`${styles.boxWidth} ${layout.section} ${styles.paddingX} items-center`}>
+      <div className={`flex-1  flex justify-start items-start flex-col pt-[1.5rem] gap-[1rem] sm:self-center self-baseline sm:min-h-[400px] min-h-[300px] `}>
+        <h3 className={`${styles.heading3}  flex flex-col `}>
+          Explore Houses: 
+          <span className={`${styles.heading4}  italic`}>Click to view  the house members</span> 
         </h3> 
-        <SearchBar fetchFunction = {fetchData} updatedList = {housesResults}  ModalType={ModalPopUpHouses}  />
+
+        <SearchBar fetchFunction = {fetchData} updatedList = {housesResults}  ModalType={ModalPopUpHouses} placeHolder={"Search a house name"} />
         
       </div>
       <div className={layout.sectionImg}>

@@ -46,7 +46,7 @@ const Quotes = () => {
   }
 
   return (
-    <section id="quote" className={`flex flex-col ${styles.paddingY} ${styles.paddingX} items-center`}>
+    <section id="quote" className={`flex flex-col ${styles.boxWidth} ${styles.paddingY} ${styles.paddingX} items-center`}>
       <h3 className={`${styles.heading3}  `}>
         Game of Thrones Quotes   
       </h3> 
