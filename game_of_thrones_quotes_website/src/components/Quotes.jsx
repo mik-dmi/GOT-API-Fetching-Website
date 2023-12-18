@@ -64,7 +64,7 @@ const Quotes = () => {
           </span>
         ))}
       </div>
-      <Button runFunction={fetchData} textButton={'Change Quotes'} styleButton={'px-[2rem] py-[0.5rem] bg-cyan-300'}/>
+      <Button runFunction={fetchData} textButton={'Generate Other Quotes'} styleButton={'px-[2rem] py-[0.5rem] bg-cyan-300'}/>
      
       
     </section>
